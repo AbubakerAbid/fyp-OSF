@@ -1,0 +1,38 @@
+
+.cards{
+    width: 100%;
+    height: auto; 
+}
+
+.card{
+    
+    margin: 3% 6%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+    background-color: #fff;
+    width: 21.25%;
+    border-radius: 40px;
+    box-shadow: 0px 13px 10px -7px rgba(0,0,0,0.1);
+    float: left;
+    border: 2px solid #1F253F;
+}
+
+.card:hover{
+    box-shadow: 0px 30pxpx 18px -8px rgba(0,0,0,0.1);
+    transform: scale(1.05, 1.05);
+}
+.card__img{
+    width: 100%;
+    border-radius: 38px 38px 0px 0px;
+}
+.card__info{
+    padding: 20px 0px;
+    text-align: center;
+    background-color: #EFF3FA;
+    border-radius: 0px 0px 40px 40px;
+}
+.card__title{
+    padding-bottom: 20px;
+}
+.service-btn{
+    padding: 5px 15px !important;
+}

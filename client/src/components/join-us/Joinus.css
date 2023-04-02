@@ -1,0 +1,159 @@
+* {
+    margin: 0px;
+    padding: 0px 0px;
+    box-sizing: border-box;
+ 
+ }
+.section-10 {
+   background-image: linear-gradient(180deg, #1f253f, #0000007d);
+    padding: 80px 0px 160px 0px;
+    
+ }
+ 
+ .section-10 h3 {
+    color: #fff;
+    font-size: 42px;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 63px;
+    display: block;
+    text-align: center;
+ }
+ 
+ .section-10 h2 {
+    color: #fff;
+    font-size: 55px;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 83px;
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+ }
+ 
+ .section-10 button {
+    display: block;
+    margin: auto;
+ }
+ 
+ .overlap {
+    display: flex;
+    padding: 20px 20px 80px 20px;
+    background-color: #EFF3FA;
+ }
+ 
+ .overlap div {
+    width: 20%;
+    padding: 40px 30px 30px 30px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 25px;
+    margin-top: -110px;
+    border: 2px solid #1F253F;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+ 
+ }
+ .overlap div:hover{
+   box-shadow: 0px 30pxpx 18px -8px rgba(0,0,0,0.1);
+   transform: scale(1.05, 1.05);
+}
+ 
+ .overlap div h3 {
+    color: #000;
+    font-size: 24px;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    line-height: 29px;
+    display: block;
+    text-align: center;
+ }
+ 
+ .overlap div p {
+    color: #000;
+    font-size: 18px;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 27px;
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+ }
+ .btna{
+    text-decoration: none;
+    color: #fff;
+ }
+ @media screen and (max-width: 1230px) {
+    * {
+       margin: 0px;
+       padding: 0px 0px;
+       box-sizing: border-box;
+    
+    }
+    .section-10 {
+        background-color: #017193;
+        padding: 40px 10px 60px 10px
+     }
+     
+     .section-10 h3 {
+        color: #fff;
+        font-size: 22px;
+        font-family: Lato, Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        line-height: 33px;
+        display: block;
+        text-align: center;
+     }
+     
+     .section-10 h2 {
+        color: #fff;
+        font-size: 25px;
+        font-family: Lato, Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        line-height: 33px;
+        display: block;
+        text-align: center;
+        margin-bottom: 30px;
+     }
+     
+     .section-10 button {
+        display: block;
+        margin: auto;
+     }
+     
+     .overlap {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px 20px 20px 20px;
+        background-color: #017193;
+     }
+     
+     .overlap div {
+        width: 100%;
+        padding: 20px 30px 20px 30px;
+        background-color: #fff;
+        margin: 10px;
+        border-radius: 25px;
+        
+     }
+     
+     .overlap div h3 {
+        color: #000;
+        font-size: 24px;
+        font-family: Lato, Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        line-height: 29px;
+        display: block;
+        text-align: center;
+     }
+     
+     .overlap div p {
+        color: #000;
+        font-size: 18px;
+        font-family: Lato, Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        line-height: 27px;
+        display: block;
+        text-align: center;
+        padding-top: 20px;
+     }
+}
