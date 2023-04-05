@@ -1,0 +1,23 @@
+.main-heading{
+    text-align: center;
+    color: black;
+}
+.main-div{
+    padding: 80px;
+    width: 100%;
+    display: flex;
+}
+.main-div-div-1{
+    text-align: left;
+    width: 50%;
+}
+.main-div-div-1 p{
+    margin: 20px;
+}
+.main-div-div-2{
+    text-align: left;
+    width: 50%;
+}
+.main-div-div-2 p{
+    margin: 20px;
+}

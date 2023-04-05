@@ -17,6 +17,7 @@ import Dashboard from './pages/dashboard/Dashboard';
 import WorkerDetailDashboard from "./pages/dashboard/workerDetailDashboard";
 import UserDetailDashboard from "./pages/dashboard/userDetailDashboard";
 import ApproveWorkerDashboard from "./pages/dashboard/approveWorkers";
+import WorkerProfile from "./pages/worker-profile/WorkerProfile";
 
 const App = () => (
 
@@ -40,6 +41,7 @@ const App = () => (
       <Route path="/WorkerDetailDashboard" element={<WorkerDetailDashboard/>} />
       <Route path="/UserDetailDashboard" element={<UserDetailDashboard/>} />
       <Route path="/ApproveWorkerDashboard" element={<ApproveWorkerDashboard/>} />
+      <Route path="WorkerProfile" element={<WorkerProfile/>}/>
       
       </Routes>
     </BrowserRouter>

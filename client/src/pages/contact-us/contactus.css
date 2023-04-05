@@ -1,0 +1,14 @@
+.contactform{
+    text-align: center;
+    margin: 40px;
+}
+
+.contactform div{
+    margin: 20px;
+}
+
+.formlabel{
+    display:inline-block;
+    margin: 20px;
+    width: 10%;
+}
