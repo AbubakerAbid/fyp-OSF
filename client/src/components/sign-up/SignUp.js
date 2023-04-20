@@ -19,7 +19,9 @@ const SignUp = ({currentId, setCurrentId}) => {
         work: '',
         contact: '',
         salary: '',
-        description: ''
+        description: '',
+        address: '',
+        email: ''
 
     });
 
@@ -45,7 +47,9 @@ const SignUp = ({currentId, setCurrentId}) => {
             work: '',
             contact: '',
             salary: '',
-            description: ''
+            description: '',
+            address: '',
+            email: ''
         });
 
     }
@@ -67,13 +71,19 @@ const SignUp = ({currentId, setCurrentId}) => {
         if (!values.contact){
             errors.contact = "Contact is required!"
         }else if (values.contact.length !== 11){
-            errors.cnic = "Contact Number should be of length 11!"
+            errors.contact = "Contact Number should be of length 11!"
         }
         if (!values.salary){
             errors.salary = "Salary is required!"
         }
         if (!values.description){
             errors.description = "Description is required!"
+        }
+        if (!values.address){
+            errors.address = "Address is required!"
+        }
+        if (!values.email){
+            errors.email = "Email is required!"
         }
         return errors
     }
@@ -127,6 +137,21 @@ const SignUp = ({currentId, setCurrentId}) => {
                 />
                     <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.lastName}</p>
                 </div>
+
+                <div className="email" style={{margin: '10px 0px'}}>
+                    <label className="form__label" for="email">Email : </label>
+                    <input style={{padding:'5px', marginLeft:'20px'}}
+                    className="form__input"  
+                    type="email" 
+                    name="email" 
+                    id="email"  
+                    placeholder="email" 
+                    value={postData.email} 
+                    onChange={(e) => setPostData( {...postData, email: e.target.value })}
+                />
+                    <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.email}</p>
+                </div>
+
                 <div className="cnic" style={{margin: '10px 0px'}}>
                     <label className="form__label" for="cnic">CNIC :    </label>
                     <input style={{padding:'5px', marginLeft:'67px'}}  
@@ -200,6 +225,20 @@ const SignUp = ({currentId, setCurrentId}) => {
                     onChange={(e) => setPostData( {...postData, description: e.target.value })}
                     />
                     <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.description}</p>                    
+                </div>
+
+                <div className="address" style={{margin: '10px 0px'}}>
+                    <label className="form__label" for="address">Address : </label>
+                    <input  style={{padding:'5px', marginLeft:'13px'}}
+                    type="text" 
+                    name="address" 
+                    id="address"  
+                    className="form__input"
+                    placeholder="address"
+                    value={postData.address} 
+                    onChange={(e) => setPostData( {...postData, address: e.target.value })}
+                    />
+                    <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.address}</p>                    
                 </div>
                 {/* <div className="password">
                     <label className="form__label" for="password">Password </label>

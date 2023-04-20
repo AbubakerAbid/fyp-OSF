@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import ApproveWorker from '../../components/approveWorker/approveWorker';
+import { useDispatch } from 'react-redux';
+import * as actionType from "../../constants/actionTypes"
 
 const ApproveWorkerDashboard = () =>{
     const history = useNavigate();
@@ -16,6 +18,13 @@ const ApproveWorkerDashboard = () =>{
         history("/ApproveWorkerDashboard");
       }
 
+      const dispatch = useDispatch();
+      const logout = () => {
+        history("/admin");
+        dispatch({ type: actionType.LOGOUT });
+      }
+  
+
     return (
         <>
        <section style={{display:'block'}}>
@@ -26,7 +35,7 @@ const ApproveWorkerDashboard = () =>{
         <button onClick ={approveWorkerPage} style={{backgroundColor:'transparent', border:'0px', width: '25%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>Approve Worker</h3></button>
         <button onClick={userDetailPage} style={{backgroundColor:'transparent', border:'0px', width: '25%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>View Users</h3></button>
         {/* <button style={{backgroundColor:'transparent', border:'0px', width: '100%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>Add New User</h3></button> */}
-        <a href="/" style={{width:'25%'}}><button style={{backgroundColor:'transparent', border:'0px', width: '100%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>Visit Homepage</h3></button></a>
+        <button onClick={logout} style={{backgroundColor:'transparent', border:'0px', width: '100%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>Logout</h3></button>
         </div>
         
         </div>

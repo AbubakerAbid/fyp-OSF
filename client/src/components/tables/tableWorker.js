@@ -1,19 +1,11 @@
 import "./table.css"
-import { useSelector } from 'react-redux';
-import React, {useEffect } from 'react';
+import React from 'react';
 import { useDispatch} from 'react-redux';
-import { fetchApprovedPosts } from "../../actions/posts";
-
-const TableWorker = () => {
-    const dispatch = useDispatch();
+import {deleteWorker} from "../../actions/auth";
+import {Link} from 'react-router-dom';
+const TableWorker = ({post}) => {
     
-    useEffect(() => {
-        dispatch(fetchApprovedPosts());
-    }, [dispatch]);
-
-    const posts = useSelector((state) => state.approvedPosts
-    );
-
+    const dispatch = useDispatch();
     return(
         <>
             <div className="App">
@@ -26,21 +18,25 @@ const TableWorker = () => {
                 <th>Contact</th>
                 <th>Salary</th>
                 <th>Description</th>
+                <th>Update</th>
+                <th>Delete</th>
                 </tr>
                 
-                {posts.map((val, key) => {
-                return (
-                    <tr key={key}>
-                    <td>{val.firstName}</td>
-                    <td> {val.lastName}</td>
-                    <td> {val.cnic}</td>
-                    <td> {val.work}</td>
-                    <td> {val.contact}</td>
-                    <td> {val.salary}</td>
-                    <td> {val.description}</td>
+        
+            
+                    <tr >
+                    <td>{post.firstName}</td>
+                    <td> {post.lastName}</td>
+                    <td> {post.cnic}</td>
+                    <td> {post.work}</td>
+                    <td> {post.contact}</td>
+                    <td> {post.salary}</td>
+                    <td> {post.description}</td>
+                    
+                    <td><Link to="/update" state={post}><button >U</button></Link></td>
+                    <td><button onClick={() => dispatch(deleteWorker(post._id))}>D</button></td>
                     </tr>
-                )
-                })}
+                
             </table>
             </div>
 

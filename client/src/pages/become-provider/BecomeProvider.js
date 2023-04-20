@@ -17,18 +17,6 @@ const BecomeProvider = () =>{
         dispatch(getPosts());
     }, [currentId, dispatch]);
 
-    // if (!user?.result?.name) {
-    //     return (
-    //         <div>
-    //             <Navbar />
-    //             <Breadcrumb title="Become a Provider" />
-    //             <Link to="/auth"><button >Provide Services Now</button></Link>
-    //             <Footer />
-            
-    //         </div>
-    //     );
-    //   }
-    
     return (
         <>
        <Navbar />

@@ -32,15 +32,15 @@ export const fetchApprovedPosts = () => async (dispatch) => {
   }
 };
 
-export const createApprovedPost = (post) => async (dispatch) => {
-  try {
-    const { data } = await api.createApprovedPost(post);
+// export const createApprovedPost = (post) => async (dispatch) => {
+//   try {
+//     const { data } = await api.createApprovedPost(post);
 
-    dispatch({ type: CREATE, payload: data });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+//     dispatch({ type: CREATE, payload: data });
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// };
 
 export const updatePost = (id, post) => async (dispatch) => {
   try {

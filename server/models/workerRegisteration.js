@@ -8,6 +8,8 @@ const WorkerRegisterationSchema = mongoose.Schema({
     contact: Number,
     salary: String,
     description: String,
+    address: String,
+    email: { type: String, required: true },
     createdAt: {
         type: Date,
         default: new Date()

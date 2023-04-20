@@ -1,17 +1,12 @@
 import "./table.css"
-import { useSelector } from 'react-redux';
-import React, {useEffect } from 'react';
+import React from 'react';
 import { useDispatch} from 'react-redux';
-import { getUsers } from "../../actions/auth";
+import {deleteUser} from "../../actions/auth";
+import {Link} from 'react-router-dom';
 
-const TableUser = () => {
+const TableUser = ({user}) => {
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(getUsers());
-    }, [dispatch]);
-
-    const users = useSelector((state) => state.users);
 
     return(
         <>
@@ -20,16 +15,22 @@ const TableUser = () => {
                 <tr>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Update</th>
+                <th>Delete</th>
                 </tr>
                 
-                {users.map((val, key) => {
-                return (
-                    <tr key={key}>
-                    <td>{val.name}</td>
-                    <td> {val.email}</td>
+         
+
+                    
+                    <tr >
+                    <td>{user.name}</td>
+                    <td> {user.email}</td>
+                    
+                    <td><Link to="/updateUser" state={user}><button >U</button></Link></td>
+                    <td><button onClick={() => dispatch(deleteUser(user._id))}>D</button></td>
                     </tr>
-                )
-                })}
+                
+      
             </table>
             </div>
 
@@ -38,3 +39,4 @@ const TableUser = () => {
 }
 
 export default TableUser;
+

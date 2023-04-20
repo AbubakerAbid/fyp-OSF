@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch} from 'react-redux';
 import { fetchApprovedPosts } from '../../actions/posts';
 import React, {useEffect } from 'react';
+
 const Posts = ({setCurrentPostId, name, purpose, currentPostId, currentId, setCurrentId})=> {
 
     const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const Posts = ({setCurrentPostId, name, purpose, currentPostId, currentId, setCu
     useEffect(() => {
         dispatch(fetchApprovedPosts());
     }, [currentId, dispatch]);
+    
 
     const posts = useSelector((state) => state.posts);
     const approvedPosts = useSelector((state) => state.approvedPosts);

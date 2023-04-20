@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 import WorkerRegistration from "../models/workerRegisteration.js";
+
 export const getPosts = async (req, res) => {
     try{
         const WorkerRegistrations = await WorkerRegistration.find();

@@ -3,7 +3,6 @@ import Breadcrumb from "../../components/breadcrumb/Breadcrumb";
 import Footer from "../../components/footer/Footer";
 import './ServiceWorkers.css'
 import Posts from "../../components/worker-post/post";
-import { fetchApprovedPosts } from "../../actions/posts";
 import React, { useState, useEffect } from 'react';
 
 

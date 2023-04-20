@@ -38,9 +38,9 @@ const Navbar = () => {
             <li className="nav__links"><a href="./">Home</a></li>
             <li className="nav__links"><a href="./About">About</a></li>
             <li className="nav__links"><a href="/FindService">Find a Worker</a></li>
-            <li className="nav__links"><a href="/BecomeProvider">Become a Worker</a></li>            
-            {/* <li className="nav__links"><a href="/ServiceWorkers">ServiceWorkers</a></li>             */}
+            <li className="nav__links"><a href="/BecomeProvider">Become a Worker</a></li>                        
             <li className="nav__links"><a href="/ContactUs">Contact Us</a></li>
+            {user?.result?.name ? (<li className="nav__links"><a href="/MyOrders">My Orders</a></li>):  (<div></div>)}
             </ul>
         </nav>
         <div>

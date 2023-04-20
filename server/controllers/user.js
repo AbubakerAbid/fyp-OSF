@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-
+import mongoose from "mongoose";
 import UserModal from "../models/user.js";
 
 const secret = 'test';
@@ -47,6 +47,16 @@ export const signup = async (req, res) => {
   }
 };
 
+export const deleteUser = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No order with id: ${id}`);
+
+  await UserModal.findByIdAndRemove(id);
+
+  res.json({ message: "User deleted successfully." });
+}
+
 export const getUsers = async (req, res) => {
   try{
       const users = await UserModal.find();
@@ -56,3 +66,22 @@ export const getUsers = async (req, res) => {
       res.status(404).json({message: err.message})
   }
 };
+
+export const updateUser = async (req, res) => {
+  const { id } = req.params;
+  const { name, email} = req.body;
+  
+  if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+
+  const updatedPost = { name, email, _id: id };
+
+  await UserModal.findByIdAndUpdate(id, updatedPost, { new: true });
+
+  res.json(updatedPost);
+}
+
+export const getAllFeedbacks = async(req, res) => {
+  const foundUser = await UserModal.find({name: req.params.username}).populate("feedbacks")
+  res.json(foundUser)
+}
+

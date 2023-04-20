@@ -6,4 +6,6 @@ export const FETCH = 'FETCH';
 export const LIKE = 'LIKE';
 
 export const AUTH = 'AUTH';
+export const AUTH2 = 'AUTH2';
+export const AUTH3 = 'AUTH3';
 export const LOGOUT = 'LOGOUT';

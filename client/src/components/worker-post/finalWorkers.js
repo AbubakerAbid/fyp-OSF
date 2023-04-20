@@ -1,31 +1,52 @@
 import './WorkerCard.css'
 import "./workerPost.css"
-import { createApprovedPost } from '../../actions/posts';
 import { useDispatch} from 'react-redux';
 import React, { useState} from 'react';
-import { useSelector } from 'react-redux';
 import { deletePost } from '../../actions/posts';
+import { workerSignup, getWorker } from '../../actions/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Worker = ({post, currentPostId, setCurrentPostId})=> {
 
-    const clickedPost = useSelector((state) => (currentPostId ? state.posts.find((message) => message._id === currentPostId) : null));
+    // const clickedPost = useSelector((state) => (currentPostId ? state.posts.find((message) => message._id === currentPostId) : null));
 
+    const dispatch = useDispatch();
 
-    const [postData, setPostData] = useState({
+    function generateP() {
+        var pass = '';
+        var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
+                'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+          
+        for (let i = 1; i <= 8; i++) {
+            var char = Math.floor(Math.random()
+                        * str.length + 1);
+              
+            pass += str.charAt(char)
+        }
+          
+        return pass;
+    }
+
+    const pass = generateP()
+
+    const [postData, setPostData] = useState({ 
+        password: pass,
         firstName: post.firstName,
+        username: post.firstName+'osf',
         lastName: post.lastName,
         cnic: post.cnic,
         work: post.work,
         contact: post.contact,
         salary: post.salary,
-        description: post.description
-
+        description: post.description,
+        address: post.address
     });
 
-    const dispatch = useDispatch();
+    
+    const history = useNavigate();
 
-    const approve = () => {
-        dispatch(createApprovedPost(postData))
+    const Approve = () => {
+        dispatch(workerSignup(postData, history));
         setCurrentPostId(post._id)
         dispatch(deletePost(post._id))
         window.location.reload(false);
@@ -43,9 +64,7 @@ const Worker = ({post, currentPostId, setCurrentPostId})=> {
                         <p className="wcard__des">{post.description}</p>
                         <p className='dv' id = "dv">{post.contact}</p>
                         <a href={post.link}>
-                        <button onClick = {approve} id = "dn" className='service-btn '>Approve</button>
-                           
-                         
+                        <button onClick = {Approve} id = "dn" className='service-btn '>Approve</button>
                         </a>
                     </div>
                 </div>
@@ -56,3 +75,4 @@ const Worker = ({post, currentPostId, setCurrentPostId})=> {
 }
 
 export default Worker;
+
