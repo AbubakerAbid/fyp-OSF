@@ -5,7 +5,7 @@ import { useDispatch} from 'react-redux';
 import { fetchApprovedPosts } from '../../actions/posts';
 import React, {useEffect } from 'react';
 
-const Posts = ({setCurrentPostId, name, purpose, currentPostId, currentId, setCurrentId})=> {
+const Posts = ({setCurrentPostId, name, purpose, currentPostId, currentId, setCurrentId, address})=> {
 
     const dispatch = useDispatch();
 
@@ -34,7 +34,7 @@ const Posts = ({setCurrentPostId, name, purpose, currentPostId, currentId, setCu
                     {
                         approvedPosts.map((post) => (  
                             <div key={post._id}>
-                                 <Post post = {post} name = {name} currentId = {currentId} setCurrentId = {setCurrentId}></Post>                          
+                                 <Post post = {post} address = {address} name = {name} currentId = {currentId} setCurrentId = {setCurrentId}></Post>                          
                             </div>
                         ))
                     }

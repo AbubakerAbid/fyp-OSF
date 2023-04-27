@@ -5,6 +5,7 @@ import React, { useState} from 'react';
 import { deletePost } from '../../actions/posts';
 import { workerSignup, getWorker } from '../../actions/auth';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Worker = ({post, currentPostId, setCurrentPostId})=> {
 
@@ -39,16 +40,18 @@ const Worker = ({post, currentPostId, setCurrentPostId})=> {
         contact: post.contact,
         salary: post.salary,
         description: post.description,
-        address: post.address
+        address: post.address,
+        email: post.email
     });
 
     
     const history = useNavigate();
 
-    const Approve = () => {
+    const Approve = async () => {
         dispatch(workerSignup(postData, history));
         setCurrentPostId(post._id)
         dispatch(deletePost(post._id))
+        const response = await axios.post('http://localhost:5000/api/sendMail', postData)
         window.location.reload(false);
     }
 

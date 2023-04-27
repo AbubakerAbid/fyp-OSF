@@ -10,6 +10,10 @@ const FindService = () =>{
        <Navbar />
        <Breadcrumb title="Find a Service" />
        <h2 className='Find-Service-Header'>Select Service You Need</h2>
+    
+
+        
+
        {Sdata.map((val) => {
         return (
             <Services 
@@ -17,8 +21,10 @@ const FindService = () =>{
                 sname={val.sname} 
                 link={val.link}
             />
+            
         );
     })}
+
        <Footer />
         </>
     );

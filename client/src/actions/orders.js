@@ -1,4 +1,4 @@
-import { FETCH_ALL, CREATE, DELETE} from '../constants/actionTypes';
+import { FETCH_ALL, CREATE, DELETE, UPDATE} from '../constants/actionTypes';
 
 import * as api from '../api/index.js';
 
@@ -40,3 +40,13 @@ export const deleteOrder = (id) => async(dispatch) => {
     console.log(error);
   }
 }
+
+export const UpdateOrder = (id, post) => async (dispatch) => {
+  try {
+    const { data } = await api.UpdateOrder(id, post);
+
+    dispatch({ type: UPDATE, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};

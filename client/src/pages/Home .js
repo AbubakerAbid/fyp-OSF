@@ -7,6 +7,7 @@ import Aboutus from './../components/aboutus/Aboutus';
 import Howworks from './../components/how-works/Howworks';
 import Joinus from './../components/join-us/Joinus';
 import Sdata from './../components/services/Sdata';
+import Tdata from './../components/services/trending';
 
 const Home = () =>{
     return (
@@ -24,7 +25,18 @@ const Home = () =>{
             />
         );
     })}
-       <Howworks />
+       
+       <h2 className='Service-Headers'>Trending Services</h2>
+       {Tdata.map((val) => {
+        return (
+            <Services 
+                imgsrc={val.imgscr} 
+                sname={val.sname} 
+                link={val.link}
+            />
+        );
+    })}
+    <Howworks />
        <Joinus />
        <Footer />
        

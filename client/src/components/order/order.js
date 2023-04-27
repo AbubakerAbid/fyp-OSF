@@ -24,7 +24,7 @@ const Order = () => {
                   <p >Schedule: {order.date.slice(0, 10)} {order.time}</p>
                   <p >Mob: {order.contact}</p>
                   <p >Order No: {order._id}</p>
-                  <p >Status:</p>
+                  <p >Status: {order.status}</p>
                   <button onClick={() => {
                     dispatch(deleteOrder(order._id))
                     window.location.reload();

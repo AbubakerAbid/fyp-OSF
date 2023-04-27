@@ -2,9 +2,9 @@ import TableUser from "../../components/tables/tableUser";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch} from 'react-redux';
 import { useSelector } from 'react-redux';
-import React, {useEffect } from 'react';
 import { getUsers } from "../../actions/auth";
 import * as actionType from "../../constants/actionTypes"
+import React, {useState, useEffect } from 'react';
 
 const UserDetailDashboard = () =>{
   
@@ -26,9 +26,12 @@ const UserDetailDashboard = () =>{
         dispatch(getUsers());
     }, [dispatch]);
 
+    const [admin, setadmin] = useState(JSON.parse(localStorage.getItem('profile3')));
+
     const logout = () => {
       history("/admin");
       dispatch({ type: actionType.LOGOUT });
+      setadmin(null);
     }
 
     const users = useSelector((state) => state.users);

@@ -34,7 +34,8 @@ const WorkerProfile = () =>{
     work:  post.work,
     address: '',
     date: '',
-    time: ''
+    time: '',
+    status: 'Not Completed'
   });
 
   const clear = () => {
@@ -91,8 +92,8 @@ const WorkerProfile = () =>{
        <Breadcrumb title="Worker Profile" />
        <div className='main-div'>
         <div className='main-div-div-1'>
-        <img src='www.abc.com/img.png'></img>
-        <p>Availability: </p>
+        {/* <img src='www.abc.com/img.png'></img> */}
+        {/* <p>Availability: </p> */}
         {/* <p>Total Expereince:</p> */}
         
         {/* <p>Contact No: {post.contact}</p> */}
@@ -112,7 +113,7 @@ const WorkerProfile = () =>{
         <p>Name: {post.firstName} {post.lastName}</p>
         <p>Service: {post.work}</p>
         <p>About: {post.description}</p>
-        <p>Address: {post.address}</p> 
+        <p>Working Area: {post.address}</p> 
         <p>Expecting Salary /month: {post.salary}</p>
         </div>
        </div>

@@ -13,6 +13,19 @@ export const saveOrder = async (req, res) => {
   
 };
 
+export const updateOrder = async (req, res) => {
+  const { id } = req.params;
+  const { status} = req.body;
+  
+  if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+
+  const updatedPost = { status, _id: id };
+
+  await Order.findByIdAndUpdate(id, updatedPost, { new: true });
+
+  res.json(updatedPost);
+}
+
 export const getOrders = async (req, res) => {
   try{
       const  { id } = req.params;

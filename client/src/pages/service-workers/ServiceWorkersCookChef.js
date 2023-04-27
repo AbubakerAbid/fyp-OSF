@@ -10,6 +10,10 @@ import { useDispatch} from 'react-redux';
 const ServiceWorkersCookChef = () =>{
     const [currentId, setCurrentId] = useState(null);
     const dispatch = useDispatch();
+    const [selectedAddress, setSelectedAddress] = useState('');
+
+    const handleAddressChange = (event) => {
+      setSelectedAddress(event.target.value);}
 
     useEffect(() => {
         dispatch(getPosts());
@@ -20,8 +24,13 @@ const ServiceWorkersCookChef = () =>{
        <Navbar />
        <Breadcrumb title="List of Cook/Chefs Available" />
        <h2 className='Find-Service-Header'>Hire who you need</h2>
-
-       <Posts setCurrentId = {setCurrentId } name="Cook / Chef"></Posts>
+       <label for="cars">Choose an Area: </label>
+       <select name="address"  onChange={handleAddressChange}>
+        <option value="Scheme 3">Scheme 3</option>
+        <option value="Bahria Town">Bahria Town</option>
+        <option value="PWD">PWD</option>
+        </select>
+       <Posts setCurrentId = {setCurrentId } address={selectedAddress} name="Cook / Chef"></Posts>
        <Footer />
         </>
     );

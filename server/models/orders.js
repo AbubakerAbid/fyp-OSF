@@ -11,6 +11,7 @@ const OrderSchema = mongoose.Schema({
     contact: Number,
     work: String,
     address: String,
+    status: String,
     date: {
       type: Date,
       required: true

@@ -2,11 +2,11 @@ import './WorkerCard.css'
 import "./workerPost.css"
 import {Link} from 'react-router-dom';
 
-const Post = ({post, setCurrentId, name})=> {
+const Post = ({post, setCurrentId, name, address})=> {
     const user = JSON.parse(localStorage.getItem('profile'));
 
 
-    if(post.work === name){
+    if(post.work === name && post.address === address){
 
     return(
         <div className='worker-card'>

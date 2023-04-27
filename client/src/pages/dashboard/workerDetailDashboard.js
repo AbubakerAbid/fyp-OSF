@@ -1,10 +1,10 @@
 import TableWorker from '../../components/tables/tableWorker';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import React, {useEffect } from 'react';
 import { useDispatch} from 'react-redux';
 import { fetchApprovedPosts } from '../../actions/posts';
 import * as actionType from "../../constants/actionTypes"
+import React, {useState, useEffect } from 'react';
 
 const WorkerDetailDashboard = () =>{
     const history = useNavigate();
@@ -26,9 +26,12 @@ const WorkerDetailDashboard = () =>{
         dispatch(fetchApprovedPosts());
     }, [dispatch]);
 
+    const [admin, setadmin] = useState(JSON.parse(localStorage.getItem('profile3')));
+
     const logout = () => {
       history("/admin");
       dispatch({ type: actionType.LOGOUT });
+      setadmin(null);
     }
 
     const posts = useSelector((state) => state.approvedPosts

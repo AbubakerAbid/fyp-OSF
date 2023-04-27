@@ -10,6 +10,7 @@ import workerRoutes from "./routes/worker.js";
 import orderRoutes from "./routes/orders.js";
 import feedbackRoutes from "./routes/feedback.js"
 import adminRoutes from "./routes/admin.js"
+import sendMail from "./utils/mail.js";
 
 const app = express();
 
@@ -25,6 +26,27 @@ app.use('/worker', workerRoutes)
 app.use('/feedback', feedbackRoutes)
 app.use('/admin', adminRoutes)
 
+app.post('/api/sendMail', async (req, res) => {
+  const {username, password, email} = req.body;
+  try{
+
+    const send_to = email;
+    const send_from = process.env.EMAIL_USER;
+    const replyTo = email;
+    const subject = "Worker Credentials"
+    const message = `
+    <h2>You are live on our website. Visit /WorkerLogin to access your dashboard</h2>
+    <h3>Login: ${username}</h3>
+    <h3>Password: ${password}</h3>
+    `
+
+    await sendMail(subject, message, send_from, replyTo, send_to)
+    res.status(200).json({success: true, message: "Email sent"})
+  } catch(error){
+    res.status(500).json(error.message)
+  }
+})
+
 const secret = 'test';
 import adminSchema from "../server/models/admin.js"
 import jwt from "jsonwebtoken";
@@ -33,6 +55,7 @@ adminSchema.create({
     name: "admin",
     password: "password"
   })
+
 jwt.sign( { username: "admin", id: 1234 }, secret, { expiresIn: "1h" } );
 
 

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './SignUp.css'
 import { createPost , updatePost} from '../../actions/posts';
 import Wdata from "./Wdata"
+import Adata from "./Adata"
 
 const SignUp = ({currentId, setCurrentId}) => {
 
@@ -228,8 +229,16 @@ const SignUp = ({currentId, setCurrentId}) => {
                 </div>
 
                 <div className="address" style={{margin: '10px 0px'}}>
-                    <label className="form__label" for="address">Address : </label>
-                    <input  style={{padding:'5px', marginLeft:'13px'}}
+                    <label className="form__label" for="address">Working Place : </label>
+                    <select style={{padding:'5px', marginLeft:'65px'}} id = "cats" onChange={(e) => {
+                        var val = document.getElementById("cats").value;
+                        setPostData( {...postData, address: val })
+                        }}>
+                        {Adata.map((category) => (
+                        <option value={category.sname} name="address">{category.sname}</option>
+                        ))}
+                    </select>
+                    {/* <input  style={{padding:'5px', marginLeft:'13px'}}
                     type="text" 
                     name="address" 
                     id="address"  
@@ -237,8 +246,8 @@ const SignUp = ({currentId, setCurrentId}) => {
                     placeholder="address"
                     value={postData.address} 
                     onChange={(e) => setPostData( {...postData, address: e.target.value })}
-                    />
-                    <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.address}</p>                    
+                    /> */}
+                    {/* <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.address}</p>                     */}
                 </div>
                 {/* <div className="password">
                     <label className="form__label" for="password">Password </label>

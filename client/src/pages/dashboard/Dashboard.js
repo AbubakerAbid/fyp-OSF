@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import * as actionType from "../../constants/actionTypes"
+import React, {useState } from 'react';
 
 const Dashboard = () =>{
     const history = useNavigate();
@@ -17,11 +18,12 @@ const Dashboard = () =>{
         history("/ApproveWorkerDashboard");
 
       }
-
+      const [admin, setadmin] = useState(JSON.parse(localStorage.getItem('profile3')));
     const dispatch = useDispatch();
     const logout = () => {
       history("/admin");
       dispatch({ type: actionType.LOGOUT });
+      setadmin(null);
     }
 
 

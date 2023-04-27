@@ -8,14 +8,26 @@ import React, { useState, useEffect } from 'react';
 
 const ServiceWorkers = () =>{
     const [currentId, setCurrentId] = useState(0);
+    const [selectedAddress, setSelectedAddress] = useState('');
 
+    const handleAddressChange = (event) => {
+      setSelectedAddress(event.target.value);
+    }
     return (
         <>
        <Navbar />
        <Breadcrumb title="List of Maids Available" />
        <h2 className='Find-Service-Header'>Hire who you need</h2>
 
-       <Posts setCurrentId = {setCurrentId } name = "Maid"></Posts>
+       <label for="cars">Choose an Area: </label>
+       <select name="address"  onChange={handleAddressChange}>
+        <option value="Scheme 3">Scheme 3</option>
+        <option value="Bahria Town">Bahria Town</option>
+        <option value="PWD">PWD</option>
+        </select>
+
+        
+       <Posts setCurrentId = {setCurrentId } name = "Maid" address={selectedAddress}></Posts>
        <Footer />
         </>
     );

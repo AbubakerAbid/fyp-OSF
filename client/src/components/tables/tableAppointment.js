@@ -1,6 +1,6 @@
 import "./table.css"
 import { useDispatch} from 'react-redux';
-import { getAppointments, deleteOrder} from '../../actions/orders';
+import { getAppointments, deleteOrder, UpdateOrder} from '../../actions/orders';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -17,6 +17,16 @@ const TableAppoinment = () => {
   
     const orders = useSelector((state) => state.orders);
 
+    const [postData, setPostData] = useState({
+      status: "Completed"
+  
+  });
+
+  const [text, setText] = useState({
+    stat: "Complete"
+
+});
+
     return (
       <div>
         {
@@ -27,11 +37,20 @@ const TableAppoinment = () => {
                     <p >Schedule: {order.date.slice(0, 10)} {order.time}</p>
                     <p >Mob: {order.userContact}</p>
                     <p >Order No: {order._id}</p>
-                    <p >Status:</p>
+                    <p >Status: {order.status}</p>
+               
                     <button onClick={() => {
                       dispatch(deleteOrder(order._id))
                       window.location.reload();
                       }}>Cancel Order</button>
+
+                    <button onClick={() => {
+                    //  setText( {stat: "Completed"})
+                  
+                    dispatch(UpdateOrder(order._id, postData))
+                    window.location.reload();
+                    
+                    }}>{text.stat}</button>
                     <br></br>
                 </div>
             ))

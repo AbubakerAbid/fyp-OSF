@@ -10,6 +10,11 @@ import { useDispatch} from 'react-redux';
 const ServiceWorkersCareTaker = () =>{
     const [currentId, setCurrentId] = useState(null);
     const dispatch = useDispatch();
+    const [selectedAddress, setSelectedAddress] = useState('');
+
+    const handleAddressChange = (event) => {
+      setSelectedAddress(event.target.value);
+    }
 
     useEffect(() => {
         dispatch(getPosts());
@@ -20,8 +25,15 @@ const ServiceWorkersCareTaker = () =>{
        <Navbar />
        <Breadcrumb title="List of Care Takers Available" />
        <h2 className='Find-Service-Header'>Hire who you need</h2>
+       <label for="cars">Choose an Area: </label>
+       <select name="address"  onChange={handleAddressChange}>
+        <option value="Scheme 3">Scheme 3</option>
+        <option value="Bahria Town">Bahria Town</option>
+        <option value="PWD">PWD</option>
+        </select>
 
-       <Posts setCurrentId = {setCurrentId } name = "Care Taker"></Posts>
+
+       <Posts setCurrentId = {setCurrentId } name = "Care Taker" address={selectedAddress}></Posts>
        <Footer />
         </>
     );
