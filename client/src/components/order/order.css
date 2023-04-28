@@ -1,0 +1,16 @@
+.order-div-main-div{
+    text-align: center;
+}
+
+.order-main-div{
+    width: 31%;
+    display: inline-block;
+    text-align: center;
+    /* margin: auto; */
+    margin: 30px 10px;
+    padding: 20px;
+    border: 1px solid black;
+}
+.line-space{
+    padding: 10px 0px;
+}

@@ -3,9 +3,10 @@
     color: black;
 }
 .main-div{
-    padding: 80px;
+    padding: 40px 80px;
     width: 100%;
     display: flex;
+    border-bottom: 2px solid black;
 }
 .main-div-div-1{
     text-align: left;
@@ -20,4 +21,26 @@
 }
 .main-div-div-2 p{
     margin: 20px;
+}
+.hire-workers{
+    text-align: center;
+}
+.worker-profile-details-right tr td{
+    /* width: 35%; */
+    margin-top: 0px;
+    text-align: left;
+}
+.hire-workers-heading{
+    padding: 20px;
+}
+
+
+
+/* Review Popup CSS Starts */
+
+.feedback-form-css{
+   padding: 0px !important;
+}
+.feedback-form-body-css{
+    padding: 0px;
 }

@@ -31,18 +31,18 @@ const TableAppoinment = () => {
       <div>
         {
             orders.map((order) => (                            
-                <div key={order._id}>
-                    <h3>Service : {order.work}</h3>
-                    <h3 >{order.userName}</h3>
-                    <p >Schedule: {order.date.slice(0, 10)} {order.time}</p>
-                    <p >Mob: {order.userContact}</p>
-                    <p >Order No: {order._id}</p>
-                    <p >Status: {order.status}</p>
+                <div key={order._id} className="appointments-table-css">
+                    <h3 className="appointment-space">Service : {order.work}</h3>
+                    <h3 className="appointment-space" >{order.userName}</h3>
+                    <p className="appointment-space" >Schedule: {order.date.slice(0, 10)} {order.time}</p>
+                    <p  className="appointment-space">Mob: {order.userContact}</p>
+                    <p className="appointment-space" >Order No: {order._id}</p>
+                    <p  className="appointment-space">Status: {order.status}</p>
                
                     <button onClick={() => {
                       dispatch(deleteOrder(order._id))
                       window.location.reload();
-                      }}>Cancel Order</button>
+                      }} className="cancel-order-worker-button">Cancel Request</button>
 
                     <button onClick={() => {
                     //  setText( {stat: "Completed"})
@@ -50,7 +50,7 @@ const TableAppoinment = () => {
                     dispatch(UpdateOrder(order._id, postData))
                     window.location.reload();
                     
-                    }}>{text.stat}</button>
+                    }} className="cancel-order-worker-button">{text.stat}</button>
                     <br></br>
                 </div>
             ))

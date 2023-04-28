@@ -40,7 +40,7 @@ const WorkerDetailDashboard = () =>{
     return (
         <>
        <section style={{display:'flex'}}>
-        <div style={{width:'20%',backgroundColor:'#1F253F'}}>
+        <div style={{width:'20%',backgroundColor:'#1F253F', height:'100vh'}}>
         <h3 style={{textAlign: 'center',fontSize: '24px',color: 'white',padding: '20px', borderBottom: '1px solid'}}>ADMIN</h3>
         <button onClick={workerDetailPage} style={{backgroundColor:'transparent', border:'0px', width: '100%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>View Workers</h3></button>
         <button onClick ={approveWorkerPage} style={{backgroundColor:'transparent', border:'0px', width: '100%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>Approve Worker</h3></button>

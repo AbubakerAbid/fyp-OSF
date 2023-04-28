@@ -18,14 +18,17 @@ const ServiceWorkers = () =>{
        <Navbar />
        <Breadcrumb title="List of Maids Available" />
        <h2 className='Find-Service-Header'>Hire who you need</h2>
+<div className="SelectLabel">
 
-       <label for="cars">Choose an Area: </label>
+       <label  for="cars">Select Your Area: </label>
        <select name="address"  onChange={handleAddressChange}>
+        <option value=" "> Select </option>
         <option value="Scheme 3">Scheme 3</option>
         <option value="Bahria Town">Bahria Town</option>
         <option value="PWD">PWD</option>
         </select>
 
+</div>
         
        <Posts setCurrentId = {setCurrentId } name = "Maid" address={selectedAddress}></Posts>
        <Footer />

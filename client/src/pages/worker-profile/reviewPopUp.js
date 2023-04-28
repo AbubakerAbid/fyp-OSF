@@ -1,5 +1,5 @@
 import "../../components/sign-in/SignIn.css";
-
+import './worker-profile.css'
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createFeedback } from "../../actions/feedback";
@@ -40,13 +40,14 @@ const dispatch = useDispatch();
           <span className="close"><button className="close" onClick={onClose}>&times;</button></span>
             <h2 className='Sign-In'>Leave your Feedback</h2>
               <form onSubmit = {handleSubmit} >
-              <div className="form" style={{padding:'padding: 20px 110px !important;'}}>
-                    <div className="form-body">
+              <div className="form feedback-form-css" style={{padding:'padding: 20px 10px !important;',width:'100%' }}>
+  
+                    <div className="form-body feedback-form-body-css">
                         
                         <div className="description" style={{margin: '10px 0px'}}>
                             
                       
-                            <textarea style={{padding:'5px', marginLeft:'13px'}} rows = "4" cols = "40" name="description" 
+                            <textarea style={{padding:'5px', marginLeft:'13px', width:'80%'}} rows = "4" cols = "40" name="description" 
                             id="description"  
                             className="form__input" value={postData.description} 
                             onChange={(e) => setPostData( {...postData, description: e.target.value })}>
@@ -55,7 +56,7 @@ const dispatch = useDispatch();
                             </div>
                     </div>
                     </div>
-                <button style={{marginBottom:'15px'}} type="submit" class="login-btn" >Done</button>
+                <button style={{marginBottom:'15px'}} type="submit" class="login-btn" >Submit</button>
                </form>
           </div>
         </div>

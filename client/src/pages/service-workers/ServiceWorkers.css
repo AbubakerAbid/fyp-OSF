@@ -1,0 +1,16 @@
+.SelectLabel{
+    text-align: center;
+    margin: 40px;
+}
+.SelectLabel label{
+    font-size: 18px;
+    /* font-family:"Montserrat, sans-serif"; */
+    font-weight: 600;
+
+}
+
+.SelectLabel select{
+    padding:  6px 20px;
+    /* border: 1px solid red; */
+    border-radius: 22px;
+}

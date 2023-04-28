@@ -32,7 +32,7 @@ const Navbar = () => {
     return(
         <>
         <header>
-        <h1>LOGO</h1>
+        <h1>OSF.Pk</h1>
         <nav>
             <ul>
             <li className="nav__links"><a href="./">Home</a></li>
