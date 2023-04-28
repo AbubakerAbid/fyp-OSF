@@ -34,3 +34,7 @@
   .cancel-order-worker-button{
     margin: 20px;
   }
+  .form-update-worker-css{
+    padding: 0px !important;
+    width: 100% !important;
+  }

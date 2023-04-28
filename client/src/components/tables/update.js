@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { updateWorker } from "../../actions/auth";
 import { useLocation } from 'react-router-dom'
 import Wdata from '../sign-up/Wdata';
+import "./table.css"
 
 const Update = () => {
   const location = useLocation()
@@ -42,7 +43,7 @@ const dispatch = useDispatch();
           <span className="close"><button className="close" onClick={onClose}>&times;</button></span>
             <h2 className='Sign-In'>Update Worker</h2>
               <form onSubmit = {handleSubmit} >
-              <div className="form" style={{padding:'padding: 20px 110px !important;'}}>
+              <div className="form form-update-worker-css" style={{padding:'padding: 20px 0px !important;'}}>
                     <div className="form-body">
                         <div className="username" style={{margin: '10px 0px'}}>
                             <label className="form__label" for="firstName">First Name : </label>
