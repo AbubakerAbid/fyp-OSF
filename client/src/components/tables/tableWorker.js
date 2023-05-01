@@ -34,7 +34,7 @@ const TableWorker = ({post}) => {
                     <td> {post.description}</td>
                     
                     <td><Link to="/update" state={post}><button >U</button></Link></td>
-                    <td><button onClick={() => dispatch(deleteWorker(post._id))}>D</button></td>
+                    <td><button onClick={() => dispatch(deleteWorker(post._id), window.location.reload(false))}>D</button></td>
                     </tr>
                 
             </table>

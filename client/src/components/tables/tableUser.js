@@ -27,7 +27,7 @@ const TableUser = ({user}) => {
                     <td> {user.email}</td>
                     
                     <td><Link to="/updateUser" state={user}><button >U</button></Link></td>
-                    <td><button onClick={() => dispatch(deleteUser(user._id))}>D</button></td>
+                    <td><button onClick={() => dispatch(deleteUser(user._id), window.location.reload(false))}>D</button></td>
                     </tr>
                 
       

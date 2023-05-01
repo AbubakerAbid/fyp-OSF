@@ -51,7 +51,6 @@ function WorkerLogin(){
         <br />
         <button style={{ margin: '10px'}}  type="submit">login</button>
         <br />
-        <a href="/forgot-password" style={{color: 'black', marginBottom:'10px'}}>Forgot password?</a>
       </form>
       </>
     );
