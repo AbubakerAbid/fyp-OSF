@@ -19,13 +19,17 @@ import Dashboard from './pages/dashboard/Dashboard';
 import WorkerDetailDashboard from "./pages/dashboard/workerDetailDashboard";
 import UserDetailDashboard from "./pages/dashboard/userDetailDashboard";
 import ApproveWorkerDashboard from "./pages/dashboard/approveWorkers";
+import OrdersDashboard from "./pages/dashboard/ordersDashboard";
 import WorkerProfile from "./pages/worker-profile/WorkerProfile";
 import WorkerDashboard from "./pages/WorkerDashboard/workerDashboard";
 import MyAppointments from "./pages/WorkerDashboard/myAppoinments";
-import Update from "../src/components/tables/update"
+import Availability from "./pages/WorkerDashboard/availability";
+import Update from "../src/components/tables/update";
+import UpdateAvailability from "./components/tables/updateAvailability";
 import UpdateUser from "./components/tables/updateUser";
 import ReviewPopUp from "./pages/worker-profile/reviewPopUp";
 import Me from "./pages/Me/Me";
+import UpdateOrder from "./components/tables/updateOrder";
 
 const App = () => (
 
@@ -34,6 +38,8 @@ const App = () => (
       <Route index element={<Home />} />
       <Route path="/auth" exact element={<Auth />} />
       <Route path="/update"  element={<Update />} />
+      <Route path="/UpdateAvailability"  element={<UpdateAvailability />} />
+      <Route path="/updateOrder"  element={<UpdateOrder />} />
       <Route path="/updateUser"  element={<UpdateUser />} />
       <Route path="/ReviewPopUp"  element={<ReviewPopUp />} />
       <Route path="/about" element={<About />} />
@@ -51,8 +57,10 @@ const App = () => (
       <Route path="/Admin" element={<Admin />} />
       <Route path="/WorkerLogin" element={<WorkerLogin />} />
       <Route path="/Dashboard" element={<Dashboard />} />
+      <Route path="/CheckOrders" element={<OrdersDashboard />} />
       <Route path="/WorkerDashboard" element={<WorkerDashboard />} />
       <Route path="/MyAppointments" element={<MyAppointments />} />
+      <Route path="/Availability" element={<Availability />} />
       <Route path="/WorkerDetailDashboard" element={<WorkerDetailDashboard/>} />
       <Route path="/UserDetailDashboard" element={<UserDetailDashboard/>} />
       <Route path="/ApproveWorkerDashboard" element={<ApproveWorkerDashboard/>} />
@@ -64,5 +72,6 @@ const App = () => (
   );
 
 export default App;
+
 
 

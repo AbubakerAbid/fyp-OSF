@@ -22,7 +22,8 @@ const SignUp = ({currentId, setCurrentId}) => {
         salary: '',
         description: '',
         address: '',
-        email: ''
+        email: '',
+        availability: 'Available'
 
     });
 
@@ -50,7 +51,8 @@ const SignUp = ({currentId, setCurrentId}) => {
             salary: '',
             description: '',
             address: '',
-            email: ''
+            email: '',
+            availability: ''
         });
 
     }

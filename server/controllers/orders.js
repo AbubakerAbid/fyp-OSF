@@ -37,6 +37,17 @@ export const getOrders = async (req, res) => {
   }
 };
 
+export const getAllOrders = async (req, res) => {
+  try{
+   
+      const order = await Order.find();
+      res.status(200).json(order);
+
+  }catch(err){
+      res.status(404).json({message: err.message})
+  }
+};
+
 export const getAppointments = async (req, res) => {
   try{
       const  { id } = req.params;

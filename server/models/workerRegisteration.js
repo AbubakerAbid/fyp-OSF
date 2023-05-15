@@ -9,6 +9,7 @@ const WorkerRegisterationSchema = mongoose.Schema({
     salary: String,
     description: String,
     address: String,
+    availability: String,
     email: { type: String, required: true },
     createdAt: {
         type: Date,

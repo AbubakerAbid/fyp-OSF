@@ -128,7 +128,7 @@ const WorkerProfile = () =>{
           </tr>
           <tr>
             <td><b>Availability</b></td>
-            <td> Available</td>
+            <td> {post.availability}</td>
           </tr>
           <tr>
             <td><b>About</b></td>
@@ -191,98 +191,100 @@ const WorkerProfile = () =>{
       {/* <td><Link to="/ReviewPopUp" state={{from: post}}><button >Add Review</button></Link></td> */}
       
       <div className='hire-workers'>
-
-    <form onSubmit={handleSubmit}> 
+      {post.availability === 'Not Available' ? (
+        <div></div>
+      ) : (<form onSubmit={handleSubmit}> 
     
-      <h2 className='hire-workers-heading'>Hire This Worker</h2>
-      <div className="address" style={{margin: '10px 0px', textAlign:'center'}}>
-      <table style={{width:'50%', margin:'auto'}}>
-        <tr>
-          <td><label className="form__label" for="address">Enter your Address: </label></td>
-          <td>
-          <input style={{padding:'5px', marginLeft:'20px'}} 
-          className="form__input" 
-          type="text" 
-          name="address"
-          id="address" 
-          placeholder="Address"
-          value={orderData.address}
-          onChange={(e) => setOrderData( {...orderData, address: e.target.value })}
-          />
-          <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.address}</p>
-          </td>
-        </tr>
-      </table>
+        <h2 className='hire-workers-heading'>Hire This Worker</h2>
+        <div className="address" style={{margin: '10px 0px', textAlign:'center'}}>
+        <table style={{width:'50%', margin:'auto'}}>
+          <tr>
+            <td><label className="form__label" for="address">Enter your Address: </label></td>
+            <td>
+            <input style={{padding:'5px', marginLeft:'20px'}} 
+            className="form__input" 
+            type="text" 
+            name="address"
+            id="address" 
+            placeholder="Address"
+            value={orderData.address}
+            onChange={(e) => setOrderData( {...orderData, address: e.target.value })}
+            />
+            <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.address}</p>
+            </td>
+          </tr>
+        </table>
+            
           
-        
-      </div>
-
-      <div className="userContact" style={{margin: '10px 0px'}}>
-      <table style={{width:'50%', margin:'auto'}}>
-        <tr>
-          <td><label className="form__label" for="userContact">Enter your Number: </label></td>
-          <td>
-          <input style={{padding:'5px', marginLeft:'25px'}} 
-          type="text" 
-          name="userContact" 
-          id="userContact"  
-          className="form__input"
-          placeholder="contact no"
-          value={orderData.userContact} 
-          onChange={(e) => setOrderData( {...orderData, userContact: e.target.value })}
+        </div>
+  
+        <div className="userContact" style={{margin: '10px 0px'}}>
+        <table style={{width:'50%', margin:'auto'}}>
+          <tr>
+            <td><label className="form__label" for="userContact">Enter your Number: </label></td>
+            <td>
+            <input style={{padding:'5px', marginLeft:'25px'}} 
+            type="text" 
+            name="userContact" 
+            id="userContact"  
+            className="form__input"
+            placeholder="contact no"
+            value={orderData.userContact} 
+            onChange={(e) => setOrderData( {...orderData, userContact: e.target.value })}
+            />
+            <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.userContact}</p>
+            </td>
+          </tr>
+        </table>
+        </div>
+  
+  
+        <div  style={{margin: '10px 0px'}}>
+        <table style={{width:'50%', margin:'auto'}}>
+          <tr>
+            <td>Enter Meeting Date</td>
+            <td>
+            <label>
+          Date: 
+          <input
+            type="date"
+            value={orderData.date}
+            onChange={(e) => setOrderData( {...orderData, date: e.target.value })}
+            required
           />
-          <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.userContact}</p>
-          </td>
-        </tr>
-      </table>
-      </div>
-
-
-      <div  style={{margin: '10px 0px'}}>
-      <table style={{width:'50%', margin:'auto'}}>
-        <tr>
-          <td>Enter Meeting Date</td>
-          <td>
-          <label>
-        Date: 
-        <input
-          type="date"
-          value={orderData.date}
-          onChange={(e) => setOrderData( {...orderData, date: e.target.value })}
-          required
-        />
-      </label>
-          </td>
-        </tr>
-      </table>
-      </div>
-
-
-      <div  style={{margin: '10px 0px'}}>
-      <table style={{width:'50%', margin:'auto'}}>
-        <tr>
-          <td>Enter Meeting Time:</td>
-          <td>
-          <label>
-        Time:
-        <input
-          type="time"
-          value={orderData.time}
-          onChange={(e) => setOrderData( {...orderData, time: e.target.value })}
-          required
-        />
-      </label>
-          </td>
-        </tr>
-      </table>
-      </div>
-
+        </label>
+            </td>
+          </tr>
+        </table>
+        </div>
+  
+  
+        <div  style={{margin: '10px 0px'}}>
+        <table style={{width:'50%', margin:'auto'}}>
+          <tr>
+            <td>Enter Meeting Time:</td>
+            <td>
+            <label>
+          Time:
+          <input
+            type="time"
+            value={orderData.time}
+            onChange={(e) => setOrderData( {...orderData, time: e.target.value })}
+            required
+          />
+        </label>
+            </td>
+          </tr>
+        </table>
+        </div>
+  
+          
+        <br />
         
-      <br />
-      
-
-      <button style={{marginLeft:'10px', marginBottom:'20px'}} type="submit" class="btn">Hire Worker</button>
-    </form>
+  
+        <button style={{marginLeft:'10px', marginBottom:'20px'}} type="submit" class="btn">Hire Worker</button>
+      </form>) }
+    
 
     <div style={{marginBottom:'40px'}}>
         {Object.keys(error).length === 0 && isSubmit ? (<div className='success'>WORKER HIRED SUCCESSFULLY ! <br></br>Check My Orders Page to Contact the Worker.</div> ): null}

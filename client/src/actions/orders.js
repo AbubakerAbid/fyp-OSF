@@ -12,6 +12,17 @@ export const getOrders = (id) => async (dispatch) => {
   }
 };
 
+export const allOrders = () => async (dispatch) => {
+  try {
+    const { data } = await api.allOrders();
+
+    dispatch({ type: FETCH_ALL, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+
 export const getAppointments = (id) => async (dispatch) => {
   try {
     const { data } = await api.fetchAppointments(id);

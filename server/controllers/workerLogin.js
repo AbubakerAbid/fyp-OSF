@@ -93,11 +93,11 @@ export const deleteWorker= async (req, res) => {
 
 export const updateWorker = async (req, res) => {
   const { id } = req.params;
-  const { firstName, lastName, cnic, work, contact, salary, description} = req.body;
+  const { firstName, lastName, cnic, work, contact, salary, description, availability} = req.body;
   
   if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
-  const updatedPost = { firstName, lastName, cnic, work, contact, salary, description, _id: id };
+  const updatedPost = { firstName, lastName, cnic, work, contact, salary, description, availability, _id: id };
 
   await workerSchema.findByIdAndUpdate(id, updatedPost, { new: true });
 

@@ -41,7 +41,8 @@ const Worker = ({post, currentPostId, setCurrentPostId})=> {
         salary: post.salary,
         description: post.description,
         address: post.address,
-        email: post.email
+        email: post.email,
+        availability: post.availability
     });
 
     

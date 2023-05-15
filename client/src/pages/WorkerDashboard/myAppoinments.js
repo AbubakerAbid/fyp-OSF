@@ -21,12 +21,18 @@ const MyAppointments = () =>{
         history("/MyAppointments");
       }
 
+    const availabilityPage = () => {
+        history("/Availability");
+      }
+
+
     return (
         <>
          {worker?.result?.firstName ? ( <section style={{display:'flex'}}>
         <div style={{width:'20%',backgroundColor:'#1F253F', height:'100vh'}}>
         <h3 style={{textAlign: 'center',fontSize: '24px',color: 'white',padding: '20px', borderBottom: '1px solid'}}>{worker?.result?.username}</h3>
         <button onClick={appointmentsPage} style={{backgroundColor:'transparent', border:'0px', width: '100%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>View Appointments</h3></button>
+        <button onClick={availabilityPage} style={{backgroundColor:'transparent', border:'0px', width: '100%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>Availability</h3></button>
         <button onClick={logout} style={{backgroundColor:'transparent', border:'0px', width: '100%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>Logout</h3></button>
         
         </div>
