@@ -41,6 +41,7 @@ const Navbar = () => {
             <li className="nav__links"><a href="/BecomeProvider">Become a Worker</a></li>                        
             <li className="nav__links"><a href="/ContactUs">Contact Us</a></li>
             {user?.result?.name ? (<li className="nav__links"><a href="/MyOrders">My Orders</a></li>):  (<div></div>)}
+            {user?.result?.name ? (<li className="nav__links"><a href="/Me">Me</a></li>):  (<div></div>)}
             </ul>
         </nav>
         <div>

@@ -23,7 +23,7 @@ const MyAppointments = () =>{
 
     return (
         <>
-       <section style={{display:'flex'}}>
+         {worker?.result?.firstName ? ( <section style={{display:'flex'}}>
         <div style={{width:'20%',backgroundColor:'#1F253F', height:'100vh'}}>
         <h3 style={{textAlign: 'center',fontSize: '24px',color: 'white',padding: '20px', borderBottom: '1px solid'}}>{worker?.result?.username}</h3>
         <button onClick={appointmentsPage} style={{backgroundColor:'transparent', border:'0px', width: '100%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>View Appointments</h3></button>
@@ -34,7 +34,8 @@ const MyAppointments = () =>{
         <h3 style={{textAlign: 'center',fontSize: '24px',color: '#1F253F',padding: '20px', borderBottom: '1px solid #1F253F'}}>My Dashboard</h3>
         <TableAppoinment />
         </div>
-       </section>
+       </section>):  (<div></div>)}
+      
         </>
     );
 }

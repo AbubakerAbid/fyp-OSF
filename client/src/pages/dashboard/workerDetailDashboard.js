@@ -29,8 +29,8 @@ const WorkerDetailDashboard = () =>{
     const [admin, setadmin] = useState(JSON.parse(localStorage.getItem('profile3')));
 
     const logout = () => {
-      history("/admin");
       dispatch({ type: actionType.LOGOUT });
+      history("/admin");
       setadmin(null);
     }
 
@@ -39,7 +39,7 @@ const WorkerDetailDashboard = () =>{
 
     return (
         <>
-       <section style={{display:'flex'}}>
+        {admin?.result?.name ? (<section style={{display:'flex'}}>
         <div style={{width:'20%',backgroundColor:'#1F253F'}}>
         <h3 style={{textAlign: 'center',fontSize: '24px',color: 'white',padding: '20px', borderBottom: '1px solid'}}>ADMIN</h3>
         <button onClick={workerDetailPage} style={{backgroundColor:'transparent', border:'0px', width: '100%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>View Workers</h3></button>
@@ -55,7 +55,9 @@ const WorkerDetailDashboard = () =>{
         <TableWorker post={post}/>
         ))}
         </div>
-       </section>
+       </section>):  (<div></div>)}
+        
+       
         </>
     );
 }

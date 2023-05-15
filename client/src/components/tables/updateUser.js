@@ -17,16 +17,23 @@ const UpdateUser = () => {
 
 
 });
-    
+ 
 const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(updateUser(from._id, postData))
-    history("/UserDetailDashboard");
+    
+    if (from.status === 'me') {
+      history("/Me");
+    }else{
+    history("/UserDetailDashboard");}
   };
 
   const onClose = () => {
-    history("/UserDetailDashboard");
+    if (from.status === 'me') {
+      history("/Me");
+    }else{
+    history("/UserDetailDashboard");}
   }
 
   return (

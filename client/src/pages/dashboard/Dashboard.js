@@ -18,18 +18,22 @@ const Dashboard = () =>{
         history("/ApproveWorkerDashboard");
 
       }
-      const [admin, setadmin] = useState(JSON.parse(localStorage.getItem('profile3')));
+    const [admin, setadmin] = useState(JSON.parse(localStorage.getItem('profile3')));
     const dispatch = useDispatch();
+
+    
     const logout = () => {
-      history("/admin");
       dispatch({ type: actionType.LOGOUT });
+      history("/admin");
+      
       setadmin(null);
     }
 
 
+
     return (
         <>
-       <section style={{display:'flex'}}>
+         {admin?.result?.name ? (<section style={{display:'flex'}}>
         <div style={{width:'20%',backgroundColor:'#1F253F', height:'100vh'}}>
         <h3 style={{textAlign: 'center',fontSize: '24px',color: 'white',padding: '20px', borderBottom: '1px solid'}}>ADMIN</h3>
         <button onClick={workerDetailPage} style={{backgroundColor:'transparent', border:'0px', width: '100%'}}><h3 style={{textAlign: 'center',fontSize: '16px',color: 'white',padding: '20px', borderBottom: '1px solid', fontWeight:'400'}}>View Workers</h3></button>
@@ -43,7 +47,8 @@ const Dashboard = () =>{
         <h3 style={{textAlign: 'center',fontSize: '24px',color: '#1F253F',padding: '20px', borderBottom: '1px solid #1F253F'}}>Dashboard</h3>
 
         </div>
-       </section>
+       </section>):  (<div></div>)}
+       
         </>
     );
 }

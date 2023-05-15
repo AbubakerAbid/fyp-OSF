@@ -11,6 +11,7 @@ const TableUser = ({user}) => {
     return(
         <>
             <div className="App">
+         
             <table>
                 <tr>
                 <th>Name</th>

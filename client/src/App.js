@@ -25,6 +25,7 @@ import MyAppointments from "./pages/WorkerDashboard/myAppoinments";
 import Update from "../src/components/tables/update"
 import UpdateUser from "./components/tables/updateUser";
 import ReviewPopUp from "./pages/worker-profile/reviewPopUp";
+import Me from "./pages/Me/Me";
 
 const App = () => (
 
@@ -40,6 +41,7 @@ const App = () => (
       <Route path="/BecomeProvider" element={<BecomeProvider />} />
       <Route path="/ContactUs" element={<ContactUs />} />
       <Route path="/MyOrders" element={<Orders />} />
+      <Route path="/Me" element={<Me />} />
       <Route path="/ServiceWorkersMaid" element={<ServiceWorkers />} />
       <Route path="/ServiceWorkersDriver" element={<ServiceWorkersDriver />} />
       <Route path="/ServiceWorkersCareTaker" element={<ServiceWorkersCareTaker />} />
