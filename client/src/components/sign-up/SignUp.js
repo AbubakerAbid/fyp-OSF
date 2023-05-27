@@ -108,70 +108,115 @@ const SignUp = ({currentId, setCurrentId}) => {
 
     return(
         <>
-        <div>
-        {Object.keys(error).length === 0 && isSubmit ? (<div className='success'>Successfully Registered</div> ): null}
-        </div>
+       
+        
         <form onSubmit={handleSubmit}>
             <div className="form" style={{padding:'padding: 20px 110px !important;'}}>
+            <p style={{textAlign:'center',  fontSize:'28px', fontWeight:'600'}}>
+            Worker Registration
+        </p>
             <div className="form-body">
                 <div className="username" style={{margin: '10px 0px'}}>
-                    <label className="form__label" for="firstName">First Name : </label>
-                    <input style={{padding:'5px', marginLeft:'20px'}} 
+                <table className='workerregistration'>
+                    <tr>
+                        <td>  
+                        <label className="form__label" for="firstName">First Name  </label>
+                        </td>
+                        <td>
+                        <input style={{padding:'5px', marginLeft:'0px'}} 
                     className="form__input" 
                     type="text" 
                     name="firstName"
                     id="firstName" 
-                    placeholder="First Name"
+                    placeholder="Enter Your First Name"
                     value={postData.firstName}
                     onChange={(e) => setPostData( {...postData, firstName: e.target.value })}
                     />
+                        </td>
+                    </tr>
+                </table>
                     <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.firstName}</p>
                 </div>
                 <div className="lastname" style={{margin: '10px 0px'}}>
-                    <label className="form__label" for="lastName">Last Name : </label>
-                    <input style={{padding:'5px', marginLeft:'20px'}}
+                <table className='workerregistration'>
+                    <tr>
+                        <td> <label className="form__label" for="lastName">Last Name </label></td>
+                        <td>
+                        <input style={{padding:'5px', marginLeft:'0px'}}
                     className="form__input"  
                     type="text" 
                     name="lastName" 
                     id="lastName"  
-                    placeholder="LastName" 
+                    placeholder="Enter Your Last Name" 
                     value={postData.lastName} 
                     onChange={(e) => setPostData( {...postData, lastName: e.target.value })}
                 />
+                        </td>
+                    </tr>
+                </table>
+                   
+                   
                     <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.lastName}</p>
                 </div>
 
                 <div className="email" style={{margin: '10px 0px'}}>
-                    <label className="form__label" for="email">Email : </label>
-                    <input style={{padding:'5px', marginLeft:'20px'}}
+                <table className='workerregistration'>
+                    <tr>
+                        <td>
+                        <label className="form__label" for="email">Email  </label>
+                        </td>
+                        <td>
+                        <input style={{padding:'5px', marginLeft:'0px'}}
                     className="form__input"  
                     type="email" 
                     name="email" 
                     id="email"  
-                    placeholder="email" 
+                    placeholder="Enter Your Email" 
                     value={postData.email} 
                     onChange={(e) => setPostData( {...postData, email: e.target.value })}
                 />
+                        </td>
+                    </tr>
+                </table>
+                    
+                    
                     <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.email}</p>
                 </div>
 
                 <div className="cnic" style={{margin: '10px 0px'}}>
-                    <label className="form__label" for="cnic">CNIC :    </label>
-                    <input style={{padding:'5px', marginLeft:'67px'}}  
+
+                <table className='workerregistration'>
+                    <tr>
+                        <td>
+                        <label className="form__label" for="cnic">CNIC     </label>
+                        </td>
+                        <td>
+                        <input style={{padding:'5px', marginLeft:'0px'}}  
                     type="text" 
                     name="cnic" 
                     id="cnic"  
                     className="form__input"
-                    placeholder="cnic"
+                    placeholder="Enter Your CNIC No"
                     value={postData.cnic} 
                     onChange={(e) => setPostData( {...postData, cnic: e.target.value })}
                     />
+                        </td>
+                    </tr>
+                </table>
+                    
+                   
                     <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.cnic}</p>
                 </div>
                 
                 <div className="work" style={{margin: '10px 0px'}}>
-                    <label className="form__label" for="work">Work : </label>
-                    <select style={{padding:'5px', marginLeft:'65px'}} id = "cat" onChange={(e) => {
+
+                <table className='workerregistration'>
+                    <tr>
+                        <td>
+                        <label className="form__label" for="work">Work Service  </label>
+                        </td>
+                        <td>
+                        <select style={{padding:'5px', marginLeft:'0px'}} id = "cat" onChange={(e) => {
                         var val = document.getElementById("cat").value;
                         setPostData( {...postData, work: val })
                         }}>
@@ -179,6 +224,11 @@ const SignUp = ({currentId, setCurrentId}) => {
                         <option value={category.sname} name="work">{category.sname}</option>
                         ))}
                     </select>
+                        </td>
+                    </tr>
+                </table>
+                    
+                    
                     {/* <input  
                     type="text" 
                     name="work" 
@@ -190,49 +240,88 @@ const SignUp = ({currentId, setCurrentId}) => {
                     /> */}
                 </div>
                 <div className="contact" style={{margin: '10px 0px'}}>
-                    <label className="form__label" for="contact">ContactNo: </label>
-                    <input style={{padding:'5px', marginLeft:'25px'}} 
+
+                <table className='workerregistration'>
+                    <tr>
+                        <td>
+                        <label className="form__label" for="contact">Contact No</label>
+                        </td>
+                        <td>
+                        <input style={{padding:'5px', marginLeft:'0px'}} 
                     type="text" 
                     name="contact" 
                     id="contact"  
                     className="form__input"
-                    placeholder="contact no"
+                    placeholder="Enter Your Phone No"
                     value={postData.contact} 
                     onChange={(e) => setPostData( {...postData, contact: e.target.value })}
                     />
+                        </td>
+                    </tr>
+                </table>
+                   
+                    
                     <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.contact}</p>
                 </div>
                 <div className="salary" style={{margin: '10px 0px'}}>
-                    <label className="form__label" for="salary">Salary Range : </label>
-                    <input  style={{padding:'5px'}}
+
+                <table className='workerregistration'>
+                    <tr>
+<td>
+<label className="form__label" for="salary">Salary Range  </label>
+</td>
+<td>
+  
+<input  style={{padding:'5px'}}
                     type="text" 
                     name="salary" 
                     id="salary"  
                     className="form__input"
-                    placeholder="Salary Range"
+                    placeholder="Expected Salary Range"
                     value={postData.salary} 
                     onChange={(e) => setPostData( {...postData, salary: e.target.value })}
                     />
+</td>
+                    </tr>
+                </table>
+                  
                     <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.salary}</p>
                 </div>
 
                 <div className="description" style={{margin: '10px 0px'}}>
-                    <label className="form__label" for="description">Description : </label>
-                    <input  style={{padding:'5px', marginLeft:'13px'}}
+
+                <table className='workerregistration'>
+                    <tr>
+                        <td>
+                        <label className="form__label" for="description">Description  </label>
+                        </td>
+                        <td>
+                        <input  style={{padding:'5px', marginLeft:'0px'}}
                     type="text" 
                     name="description" 
                     id="description"  
                     className="form__input"
-                    placeholder="description"
+                    placeholder="Something About You"
                     value={postData.description} 
                     onChange={(e) => setPostData( {...postData, description: e.target.value })}
                     />
+                        </td>
+                    </tr>
+                </table>
+                
+                  
                     <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.description}</p>                    
                 </div>
 
                 <div className="address" style={{margin: '10px 0px'}}>
-                    <label className="form__label" for="address">Working Place : </label>
-                    <select style={{padding:'5px', marginLeft:'65px'}} id = "cats" onChange={(e) => {
+
+                <table className='workerregistration'>
+                    <tr>
+                        <td>
+                        <label className="form__label" for="address">Working Area  </label>
+                        </td>
+                        <td>
+                        <select style={{padding:'5px', marginLeft:'0px'}} id = "cats" onChange={(e) => {
                         var val = document.getElementById("cats").value;
                         setPostData( {...postData, address: val })
                         }}>
@@ -240,6 +329,11 @@ const SignUp = ({currentId, setCurrentId}) => {
                         <option value={category.sname} name="address">{category.sname}</option>
                         ))}
                     </select>
+                        </td>
+                    </tr>
+                </table>
+                   
+                  
                     {/* <input  style={{padding:'5px', marginLeft:'13px'}}
                     type="text" 
                     name="address" 
@@ -265,6 +359,9 @@ const SignUp = ({currentId, setCurrentId}) => {
             </div>
         </div>
       </form>  
+      <div style={{margin:'10px 0px 40px 0px'}}>
+        {Object.keys(error).length === 0 && isSubmit ? (<div className='success'>Successfully Registered <p>Wait for the Confirmation Email <br></br> Admin Approves your Profile after Verification</p></div> ): null}
+        </div>
         </>
     );
 }

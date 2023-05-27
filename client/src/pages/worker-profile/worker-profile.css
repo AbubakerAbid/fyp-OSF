@@ -18,6 +18,7 @@
 .main-div-div-2{
     text-align: left;
     width: 50%;
+    margin-left: 50px;
 }
 .main-div-div-2 p{
     margin: 20px;
@@ -43,4 +44,9 @@
 }
 .feedback-form-body-css{
     padding: 0px;
+}
+
+.feedbackh{
+    margin-left: 35px;
+    padding-top: 30px;
 }

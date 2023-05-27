@@ -16,7 +16,7 @@ const Me = () =>{
        <Navbar />
        <Breadcrumb title="Edit My Profile" />
        <br></br>
-       <p>You will have to LogIn again to see the updates</p>
+       <p style={{textAlign:"center"}}>Note: You will have to LogIn again to see the updates</p>
        <br></br>
        <table>
                 <tr>

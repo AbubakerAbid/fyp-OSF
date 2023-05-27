@@ -27,6 +27,11 @@
     padding: 0px 180px;
     margin-bottom: 40px;
 }
+.HomeVideo{
+    display: block;
+    margin: auto;
+    margin-bottom: 40px;
+}
 @media screen and (max-width: 650px) {
     * {
         margin: 0px;

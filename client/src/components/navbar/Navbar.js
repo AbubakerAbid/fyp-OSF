@@ -41,7 +41,7 @@ const Navbar = () => {
             <li className="nav__links"><a href="/BecomeProvider">Become a Worker</a></li>                        
             <li className="nav__links"><a href="/ContactUs">Contact Us</a></li>
             {user?.result?.name ? (<li className="nav__links"><a href="/MyOrders">My Orders</a></li>):  (<div></div>)}
-            {user?.result?.name ? (<li className="nav__links"><a href="/Me">Me</a></li>):  (<div></div>)}
+            {user?.result?.name ? (<li className="nav__links"><a href="/Me">    <img src='https://abubakerabid.com/wp-content/uploads/2023/05/transparent-hd-white-male-user-profile-icon-11637133256qticy7lqml-removebg-preview.png' style={{width:"35px", height:"50px;"}}></img></a></li>):  (<div></div>)}
             </ul>
         </nav>
         <div>

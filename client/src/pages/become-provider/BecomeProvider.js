@@ -21,7 +21,7 @@ const BecomeProvider = () =>{
         <>
        <Navbar />
        <Breadcrumb title="Become a Worker" />
-       <p style={{textAlign:'center', fontSize:'40px', fontWeight: '700', margin:'40px 0px 20px 0px', lineHeight:'60px'}}>Fill out the Registration Form<br></br> & <br></br>Get instant Job</p>
+       <p style={{textAlign:'center', fontSize:'40px', fontWeight: '700', margin:'40px 0px 20px 0px', lineHeight:'60px'}}>Fill out the Registration Form<br></br>to Get instant Job</p>
        <SignUp currentId={currentId} setCurrentId={setCurrentId}/>
        <Footer />
         </>

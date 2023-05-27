@@ -10,7 +10,7 @@ const Joinus = () => {
         <h2>
             100% secure guarantee
         </h2>
-        <button> <a href="#" className="btna"> Join OSF now </a></button>
+        <button> <a href="/BecomeProvider" className="btna"> Join OSF now </a></button>
     </section>
     <section className="overlap">
         <div>

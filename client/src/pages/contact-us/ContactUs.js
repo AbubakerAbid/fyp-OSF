@@ -28,10 +28,15 @@ const ContactUs = () =>{
        <Navbar />
        <Breadcrumb title="Contact Us" />
        <form onSubmit={handleSubmit} className='contactform'>
-       <label htmlFor="name" className='formlabel'>
+       <table className='contactforms'>
+        <tr>
+          <td>
+          <label htmlFor="name" className='formlabel'>
        Name
       </label>
-      <textarea
+          </td>
+          <td>
+          <textarea
         id="name"
         name="name"
       />
@@ -40,11 +45,19 @@ const ContactUs = () =>{
         field="name"
         errors={state.errors}
       />
+          </td>
+        </tr>
+       </table>
       <br></br>
-      <label htmlFor="email" className='formlabel'>
+      <table className='contactforms'>
+        <tr>
+          <td>
+          <label htmlFor="email" className='formlabel'>
         Email Address
       </label>
-      <input
+          </td>
+          <td>
+          <input
         id="email"
         type="email" 
         name="email"
@@ -54,11 +67,22 @@ const ContactUs = () =>{
         field="email"
         errors={state.errors}
       />
+          </td>
+        </tr>
+      </table>
+      
+     
       <br></br>
-      <label htmlFor="message" className='formlabel'>
+      
+      <table className='contactforms'>
+        <tr>
+          <td>
+          <label htmlFor="message" className='formlabel'>
        Message
       </label>
-      <textarea
+          </td>
+          <td>
+          <textarea
         id="message"
         name="message"
       />
@@ -67,6 +91,11 @@ const ContactUs = () =>{
         field="message"
         errors={state.errors}
       />
+          </td>
+        </tr>
+      </table>
+     
+     
       <br></br>
       <button type="submit" disabled={state.submitting}>
         Submit

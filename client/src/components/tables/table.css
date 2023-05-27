@@ -8,7 +8,7 @@
     
   table {
     border: 2px solid black;
-    width: 90%;
+    width: 100%;
     /* height: 200px; */
   }
     
@@ -19,6 +19,7 @@
   td {
     text-align: center;
     padding: 8px;
+    width: 30%;
   }
   .appointments-table-css{
     margin: 30px;

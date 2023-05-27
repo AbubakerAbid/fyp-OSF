@@ -1,6 +1,12 @@
 .contactform{
+    width: 90%;
+    display: block;
     text-align: center;
     margin: 40px;
+    background-color: #30354B;
+    padding: 60px;
+    border-radius: 28px;
+    color: #fff;
 }
 
 .contactform div{
@@ -10,5 +16,23 @@
 .formlabel{
     display:inline-block;
     margin: 20px;
-    width: 10%;
+    width: 100%;
+}
+
+
+.contactforms tr td{
+    width: 50%;
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+.contactforms {
+    width: 50%;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    margin: auto;
+}
+.contactforms tr td input{
+    padding: 5px 0px;
 }
