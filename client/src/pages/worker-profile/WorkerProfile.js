@@ -56,17 +56,33 @@ const WorkerProfile = () =>{
 
   }
 
+
+
   const [error, setErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
   const validate = (values) => {
     const errors = {}
 
+    const currentDate = new Date();
+    const selectedDate = new Date(values.date);
+    if (selectedDate < currentDate) {
+      errors.date = "Please select a present or future date"
+    }
+
+    // const currentTime = new Date();
+    // const selectedTime = new Date(`2000-01-01T${values.time}`);
+    // if (selectedTime < currentTime) {
+    //   errors.time = "Please select a present or future time"
+    // }
+
     if (!values.address){
         errors.address = "Your valid address is required!"
     }
     if (!values.userContact){
       errors.userContact = "Contact is required!"
+    }else if (!/^\d+$/.test(values.userContact)) {
+      errors.userContact = "Contact should only contain numbers!";
     }else if (values.userContact.length !== 11){
         errors.userContact = "Contact Number should be of length 11!"
     }
@@ -253,6 +269,7 @@ const WorkerProfile = () =>{
             required
           />
         </label>
+        <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.date}</p>
             </td>
           </tr>
         </table>
@@ -273,6 +290,7 @@ const WorkerProfile = () =>{
             required
           />
         </label>
+        {/* <p style={{fontSize: '14px',color: 'red',marginTop: '5px',marginBottom: '5px'}}>{error.time}</p> */}
             </td>
           </tr>
         </table>

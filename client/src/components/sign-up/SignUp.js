@@ -52,7 +52,7 @@ const SignUp = ({currentId, setCurrentId}) => {
             description: '',
             address: '',
             email: '',
-            availability: ''
+            availability: 'Available'
         });
 
     }
@@ -61,18 +61,28 @@ const SignUp = ({currentId, setCurrentId}) => {
         const errors = {}
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         if (!values.firstName){
-            errors.firstName = "First Name is required!"
-        }
+            errors.firstName = "First Name is required!";
+          } else if (typeof values.firstName !== 'string' || /\d/.test(values.firstName)) {
+            errors.firstName = "First Name should be a string!";
+          }
+        
         if (!values.lastName){
-            errors.lastName = "Last Name is required!"
-        }
+            errors.lastName = "Last Name is required!";
+          } else if (typeof values.lastName !== 'string' || /\d/.test(values.lastName)) {
+            errors.lastName = "Last Name should be a string!";
+          }
         if (!values.cnic){
             errors.cnic = "CNIC is required!"
-        }else if (values.cnic.length !== 13){
+        }else if (!/^\d+$/.test(values.cnic)) {
+            errors.cnic = "CNIC should only contain numbers!";
+        }
+        else if (values.cnic.length !== 13){
             errors.cnic = "CNIC should be of length 13!"
         }
         if (!values.contact){
             errors.contact = "Contact is required!"
+        }else if (!/^\d+$/.test(values.contact)) {
+            errors.contact = "Contact should only contain numbers!";
         }else if (values.contact.length !== 11){
             errors.contact = "Contact Number should be of length 11!"
         }

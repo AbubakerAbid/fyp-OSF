@@ -48,9 +48,14 @@ const SignIn = () => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.firstName){
         errors.firstName = "First Name is required!"
+    }else if (typeof values.firstName !== 'string' || /\d/.test(values.firstName)) {
+      errors.firstName = "First Name should be a string!";
     }
+    
     if (!values.lastName){
         errors.lastName = "Last Name is required!"
+    }else if (typeof values.lastName !== 'string' || /\d/.test(values.lastName)) {
+      errors.lastName = "Last Name should be a string!";
     }
     if (!values.email){
         errors.email = "Email is required!"

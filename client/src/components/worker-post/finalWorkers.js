@@ -67,6 +67,9 @@ const Worker = ({post, currentPostId, setCurrentPostId})=> {
                         <h3 className="wcard__salary">Starting from : {post.salary}</h3>
                         <p className="wcard__des">{post.description}</p>
                         <p className='dv' id = "dv">{post.contact}</p>
+                        <br></br>
+                        <p className='dv' id = "dv">{post.cnic}</p>
+                        <br></br>
                         <a href={post.link}>
                         <button onClick = {Approve} id = "dn" className='service-btn '>Approve</button>
                         </a>
