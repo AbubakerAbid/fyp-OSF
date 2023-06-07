@@ -122,4 +122,14 @@ button {
 .buttons button{
   margin: 10px 0px;
 }
+.hsec1-div1 {
+  width: 100%;
+  padding: 0px 50px;
+}
+.hsec1-div2{
+width: 100%;
+}
+.section-1{
+padding-bottom: 0px;
+}
 }

@@ -34,7 +34,7 @@ const Navbar = () => {
         <header>
         <h1>OSF.Pk</h1>
         <nav>
-            <ul>
+            <ul className='menulinks'>
             <li className="nav__links"><a href="./">Home</a></li>
             <li className="nav__links"><a href="./About">About</a></li>
             <li className="nav__links"><a href="/FindService">Find a Worker</a></li>

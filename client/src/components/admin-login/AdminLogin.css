@@ -7,4 +7,9 @@
     font-size: 30px;
     height: 100vh;
   }
-  
+  @media screen and (max-width: 650px) {
+
+    .adminloginpage{
+      margin: 6% !important;
+    }
+  }

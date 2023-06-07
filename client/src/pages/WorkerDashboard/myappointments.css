@@ -1,0 +1,12 @@
+@media screen and (max-width: 650px) {
+    .workerloginbox{
+        margin: 5% 5% !important;
+    }
+    .workerdashboardpage{
+        display: block !important;
+    }
+    .workerdashboardpage div{ 
+       width: 100% !important;
+       height: auto !important;
+    }
+}

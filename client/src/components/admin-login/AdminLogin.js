@@ -2,7 +2,8 @@ import React, {useState } from 'react';
 import { useDispatch} from 'react-redux';
 import {signInAdmin} from "../../actions/admin"
 import { useNavigate } from 'react-router-dom';
-  
+import './AdminLogin.css'
+
 function AdminLogin(){
     const dispatch = useDispatch();
     const history = useNavigate();
@@ -36,7 +37,7 @@ function AdminLogin(){
       <h3 style={{    color: '#1F253F',
       textAlign: 'center',
       marginTop: '30px'}}>Admin Login</h3>
-      <form style={{
+      <form className='adminloginpage' style={{
           textAlign: 'center',
           margin: '2% 36%', border: '2px solid', paddingTop: '30px', paddingBottom: '30px'
       }} onSubmit={handleSubmit}>

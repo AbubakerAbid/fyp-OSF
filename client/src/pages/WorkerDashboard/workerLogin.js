@@ -2,6 +2,7 @@ import React, {useState } from 'react';
 import { useDispatch} from 'react-redux';
 import { workerSignin} from '../../actions/auth';
 import { useNavigate } from 'react-router-dom';
+import './myappointments.css'
   
 function WorkerLogin(){
     const dispatch = useDispatch();
@@ -26,7 +27,7 @@ function WorkerLogin(){
       <h3 style={{    color: '#1F253F',
       textAlign: 'center',
       marginTop: '30px'}}>Worker Login</h3>
-      <form style={{
+      <form className='workerloginbox' style={{
           textAlign: 'center',
           margin: '2% 36%', border: '2px solid', paddingTop: '30px', paddingBottom: '30px'
       }} onSubmit={handleSubmit}>

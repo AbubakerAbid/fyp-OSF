@@ -4,3 +4,8 @@
 .hide{
     display: none;
 }
+@media screen and (max-width: 650px) {
+    .modal-content{
+        width: 95% !important;
+    }
+}

@@ -50,3 +50,8 @@
     margin-bottom: 20px;
 }
 
+@media screen and (max-width: 650px) {
+    .card{
+        width: 88.25%;
+    }
+}
